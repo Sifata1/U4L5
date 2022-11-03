@@ -14,10 +14,17 @@ public class StringLoops
        - if character = "!" and searchString = "Hello! Nice day!",
          this method returns 2
       */
-    public int countCharacters(String character, String searchString)
-    {
-
+    public static int countCharacters(String character, String searchString) {
+        int count = 0;
+        for (int i = 0; i < searchString.length(); i++) {
+            String s = searchString.charAt(i) + "";
+            if (s.equals(character)) {
+                count++;
+            }
+        }
+        return count;
     }
+
 
     /* Returns the original string reversed
 
@@ -27,6 +34,12 @@ public class StringLoops
     */
     public String reverseString(String origString)
     {
+        String orig = origString;
+        String s ="";
+        for (int i=0; i<origString.length();i++) {
+            s = orig.substring(i,i+1) + s;
+        }
         /* to be implemented */
+        return s;
     }
 }
